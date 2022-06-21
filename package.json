@@ -4,12 +4,12 @@
   "description": "integration services",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --config .prettierc 'src/**/*.ts' --write",
+    "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
     "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --ignore-pattern node_modules/",
-    "watch": "esbuild src/main.ts --bundle --watch --outfile=tmp/index.js",
-    "build": "esbuild src/main.ts --bundle --minify --outfile=dist/index.js",
-    "dev": "cls && run-p prettier-watch watch"
+    "build": "esbuild src/main.ts --bundle --minify --outfile=dist/index.js --platform=node",
+    "exe": "node dist/index.js",
+    "start": "run-s prettier lint build exe"
   },
   "repository": {
     "type": "git",
