@@ -8,7 +8,7 @@
     "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --ignore-pattern node_modules/",
     "build": "esbuild src/main.ts --bundle --minify --outfile=dist/index.js --platform=node",
-    "exe": "node tmp/index.js",
+    "exe": "node dist/index.js",
     "start": "run-s prettier lint build exe"
   },
   "repository": {
